@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    background: transparent;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: grey;
+    border-radius: 5px;
+    width: 7px;
+}
+.name {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.name:hover {
+    color: greenyellow; /* Or any highlight color */
+}
+nav{
+    height: 60px;
+    width: 95%;
+    margin: auto;
+    border-bottom: 2px solid grey;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 10;
+    justify-content: space-evenly;
+    padding: 0px 10px 0px 10px;
+    padding-bottom: 5px;
+    animation: nav 1s linear;
+    filter: brightness(.8);
+    & .no{
+        font-family: broadway;
+        font-size: 30px;
+        font-weight: bolder;
+        flex: .5;
+        color: grey;
+    }
+    & .no2{
+        font-family: broadway;
+        font-size: 30px;
+        font-weight: bolder;
+        flex: .5;
+        display: flex;
+        justify-content: flex-end;
+        color: grey;
+    }
+    & h2{
+        font-size: 25px;
+        font-family: broadway;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-transform: capitalize;
+        word-spacing: 5px;
+    }
+}
+header{
+    width: 100%;
+    position: relative;
+    filter: brightness(.8);
+    & .presidents{
+        position: relative;
+        height: 150vh;  
+        width: 100%;
+        background: linear-gradient(to top, grey 50%, white 50%);
+        overflow: hidden;
+        & .name{
+            font-size: 100px;
+            font-family: elephant;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            padding-top: 30px;
+        }
+        & .name.show{
+            animation: name 2s linear;
+        }
+        & h2{
+            font-size: 20px;
+            font-family: elephant;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            & span{
+                height: 2px;
+                width: 100px;
+                background: black;
+                letter-spacing: .5px;
+                word-spacing: 10px;
+            }
+        }
+        & .date{
+            font-size: 100px;
+            position: absolute;
+            -webkit-text-stroke: 1px ;
+            -webkit-text-fill-color: transparent;
+            font-family: broadway;
+            z-index: 11;
+        }
+        & .date.show{
+            animation: date 2s linear;
+        }
+        & img{
+            position: absolute;
+            bottom: 0;
+            height: 110vh;
+            left: 50%;
+            transform: translate(-50%);
+            filter: drop-shadow(0px 0px 40px yellow) grayscale(.8);
+        }
+        & img.show{
+            animation: image 2s linear;
+        }
+        & .hook{
+            position: absolute;
+            width: auto;
+            left: 2%;
+            top: 25%;
+            text-align: left;
+            font-size: 40px;
+            animation: hook 2s linear;
+        }
+        /* & .hook.show{
+            animation: hook 2s linear;
+        } */
+        & .life_story{
+            width: 400px;
+            text-align: right;
+            position: absolute;
+            right: 5%;
+            top: 30%;
+            & h2{
+                display: flex;
+                justify-content: flex-end;
+                width: auto;
+                font-size: 35px;
+                padding-bottom: 10px;
+            }
+            & p{
+                font-size: 25px;
+                font-weight: lighter;
+            }
+        }
+        & .life_story.show{
+            animation: lifestory 2s linear;
+        }
+        & .accomplishments{
+            width: 500px;
+            text-align: left;
+            position: absolute;
+            left: 2%;
+            top: 60%;
+            color: white;
+            & h2{
+                display: flex;
+                justify-content: flex-start;
+                width: auto;
+                font-size: 30px;
+                padding-bottom: 10px;
+            }
+            & ul{
+                & li{
+                    font-size: 20px;
+                }
+            }
+        }
+        & .accomplishments.show{
+            animation: accomplishments 2s linear;
+        }
+        & .navigation{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+        border-top: 5px solid white;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        & h2{
+            color: white;
+            text-shadow: 0px 0px 3px black;
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+        }
+    }
+    /* & .presidents::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        background: transparent;
+    } */
+    
+}
+@keyframes name {
+    from{
+        filter: blur(5px);
+        transform: translateY(20px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes date {
+    to{
+        opacity: 1;
+    }
+}
+@keyframes image {
+    from{
+        filter: grayscale(.9);
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hook {
+    from {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes lifestory {
+    from{
+        transform: translateX(400px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes accomplishments {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes nav {
+    from{
+        transform: translateY(-60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+  nav{
+    filter: brightness(.8);
+    width: 95%;
+    margin: auto;
+    border-bottom: 2px solid grey;
+    display: flex;
+    padding-bottom: 5px;
+    animation: nav 1s linear;
+    & .no{
+        display: none;
+    }
+    & .no2{
+        display: none;
+    }
+    & h2{
+        font-size: 15px;
+        flex: 2;
+    }
+}
+header{
+    width: 100%;
+    position: relative;
+    filter: brightness(.8);
+    & .presidents{
+        position: relative;
+        height: 100vh;  
+        width: 100%;
+        background: linear-gradient(to top, grey 50%, white 50%);
+        overflow: hidden;
+        & .name{
+            font-size: 30px;
+            font-family: elephant;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+        }
+        & .name.show{
+            animation: name 2s linear;
+        }
+        & h2{
+            font-size: 15px;
+            font-family: elephant;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            padding-top: 5px;
+            gap: 5px;
+            & span{
+                height: 1px;
+                width: 50px;
+                word-spacing: 5px;
+            }
+        }
+        & .date{
+            font-size: 40px;
+            position: absolute;
+            -webkit-text-stroke: 1px ;
+            -webkit-text-fill-color: transparent;
+            font-family: broadway;
+            z-index: 11;
+        }
+        & .date.show{
+            animation: date 2s linear;
+        }
+        & img{
+            position: absolute;
+            bottom: 0;
+            height: 70vh;
+            left: 50%;
+            transform: translate(-50%);
+            filter: drop-shadow(0px 0px 20px black);
+            filter: grayscale(8);
+        }
+        & img.show{
+            animation: image 2s linear;
+        }
+        & .hook{
+            position: absolute;
+            width: auto;
+            left: 1%;
+            top: 15%;
+            text-align: left;
+            font-size: 15px;
+            animation: hook 2s linear;
+        }
+        & .hook.show{
+            animation: hook 2s linear;
+        }
+        & .life_story{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: absolute;
+            right: 1%;
+            top: 20%;
+            & h2{
+                display: flex;
+                justify-content: flex-end;
+                width: auto;
+                font-size: 15px;
+                padding-bottom: 10px;
+            }
+            & p{
+                font-size: 15px;
+                width: 90%;
+                font-weight: lighter;
+            }
+        }
+        & .life_story.show{
+            animation: lifestory 2s linear;
+        }
+        & .accomplishments{
+            width: 400px;
+            text-align: left;
+            position: absolute;
+            left: 5%;
+            top: 60%;
+            color: white;
+            & h2{
+                display: flex;
+                justify-content: flex-start;
+                width: auto;
+                font-size: 15px;
+                padding-bottom: 10px;
+            }
+            & ul{
+                width: 90%;
+                & li{
+                    font-size: 15px;
+                    width: 100%;
+                }
+            }
+        }
+        & .accomplishments.show{
+            animation: accomplishments 2s linear;
+        }
+        & .navigation{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 95%;
+        border-top: 2px solid white;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        & h2{
+            color: greenyellow;
+            text-transform: capitalize;
+            font-size: 15px;
+        }
+        & .prev{
+            height: 30px;
+            width: 30px;
+            border: 2px solid white;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            position: absolute;
+            left: 5px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        & .next{
+            height: 30px;
+            width: 30px;
+            border: 2px solid white;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            position: absolute;
+            right: 5px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        & .prev:hover,
+          .next:hover{
+            background: white;
+            color: black;
+            cursor: pointer;
+            border: none;
+            scale: 1.1;
+          }
+        }
+    }
+    
+}
+
+.name, .date, img, .hook, .life_story, .accomplishments {
+    opacity: 0; 
+    /* This ensures they don't 'flash' before the animation starts */
+}
+.show {
+    opacity: 1 !important;
+}
+
+@keyframes name {
+    from{
+        transform: translateY(10px);
+        filter: blur(5px);
+    }
+    to{
+        filter: blur(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes date {
+    from{
+        filter: blur(5px);
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+@keyframes image {
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hook {
+    from {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes lifestory {
+    from{
+        transform: translateX(400px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes accomplishments {
+    from{
+        transform: translateY(60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes nav {
+    from{
+        transform: translateY(-60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+}
